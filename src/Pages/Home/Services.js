@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import React from 'react';
 import fluoride from '../../assets/images/fluoride.png';
 import cavity from '../../assets/images/cavity.png';
@@ -6,6 +9,9 @@ import treatment from '../../assets/images/treatment.png'
 import Service from './Service';
 
 const Services = () => {
+    useEffect(() => {
+        AOS.init();
+    })
     const services = [
         {
             _id: 1,
@@ -27,7 +33,7 @@ const Services = () => {
         },
     ];
     return (
-        <div className='my-28'>
+        <div className='my-28' data-aos='fade-up'>
             <div className='text-center'>
                 <h3 className='text-primary  text-xl font-bold uppercase'>Our Services</h3>
                 <h2 className='text-4xl'>Services We Provide</h2>
@@ -40,8 +46,8 @@ const Services = () => {
                     ></Service>)
                 }
             </div>
-            <div>
-                <div className="hero min-h-screen">
+            <div className='mt-8'>
+                <div className="hero min-h-screen" data-aos='fade-down'>
                     <div className="hero-content flex-col lg:flex-row">
                         <img src={treatment} />
                         <div>
